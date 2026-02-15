@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 257537025}
   m_Layer: 0
   m_Name: terrain_grass_block_top_left_0
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.5, y: 0, z: 0}
-  m_LocalScale: {x: 1.172, y: 1.172, z: 1.172}
+  m_LocalScale: {x: 1.173, y: 1.173, z: 1.173}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2000823826}
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 846319095}
   m_Layer: 0
   m_Name: terrain_grass_block_top_0
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -285,7 +285,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.172, y: 1.172, z: 1.172}
+  m_LocalScale: {x: 1.173, y: 1.173, z: 1.173}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2000823826}
@@ -498,9 +498,9 @@ GameObject:
   - component: {fileID: 1481389404}
   - component: {fileID: 1481389403}
   - component: {fileID: 1481389405}
-  - component: {fileID: 1481389406}
   - component: {fileID: 1481389408}
   - component: {fileID: 1481389407}
+  - component: {fileID: 1481389409}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -563,52 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   speed: 8
---- !u!61 &1481389406
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481389402}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.0050602555, y: -0.0033736825}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.57, y: 1.95}
-    newSize: {x: 1.57, y: 1.95}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.4283148, y: 1.8184348}
-  m_EdgeRadius: 0
+  jumpForce: 7
 --- !u!212 &1481389407
 SpriteRenderer:
   serializedVersion: 2
@@ -635,7 +590,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -690,6 +645,43 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!70 &1481389409
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481389402}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: c61a15432d86c8b4d917271cb6266898, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.57, y: 1.95}
+  m_Direction: 0
 --- !u!1 &1645160010
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +695,7 @@ GameObject:
   - component: {fileID: 1645160012}
   m_Layer: 0
   m_Name: terrain_grass_block_top_0 (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -718,7 +710,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.5, y: 0, z: 0}
-  m_LocalScale: {x: 1.172, y: 1.172, z: 1.172}
+  m_LocalScale: {x: 1.173, y: 1.173, z: 1.173}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2000823826}
@@ -840,7 +832,7 @@ GameObject:
   - component: {fileID: 2000823827}
   m_Layer: 0
   m_Name: Land
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -904,7 +896,7 @@ GameObject:
   - component: {fileID: 2021499248}
   m_Layer: 0
   m_Name: terrain_grass_block_top_right_0
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -919,7 +911,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3, y: 0, z: 0}
-  m_LocalScale: {x: 1.172, y: 1.172, z: 1.172}
+  m_LocalScale: {x: 1.173, y: 1.173, z: 1.173}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2000823826}
