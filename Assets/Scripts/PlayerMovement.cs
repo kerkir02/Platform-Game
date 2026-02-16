@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,9 +9,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private int lives = 5;
+    [SerializeField] private int lives = 3;
     [SerializeField] private float hitPower = 5f;
     [SerializeField] private float hitTime = 0.1f;
+    [SerializeField] private GameObject GameOverEffect;
+    [SerializeField] List<GameObject> heartsList;
 
     private float verticalInput;
     private float horizontalInput;
@@ -29,11 +32,13 @@ public class PlayerMovement : MonoBehaviour
         spaceDown = false;
         jumpNumber = 0;
         playerSR.enabled = true;
+        lives = heartsList.Count;
     }
 
     // Update is called once per frame
     void Update()
     {
+        GameOver();
         //verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
         PlayerAnimationMove();
@@ -103,11 +108,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (contact.normal.y > 0.5f)
                 {
-                    Destroy(collision.collider.gameObject);
+                    EnemyMovement enemy = collision.collider.GetComponent<EnemyMovement>();
+
+                    if (enemy != null)
+                    {
+                        enemy.DestroyEnemy();
+                    }
+
                     return;
                 }
             }
-            GetHit(collision.transform);           
+            GetHit(collision.transform);
         }
         if (collision.collider.CompareTag("Ground"))
         {
@@ -123,6 +134,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("RedGem") && lives < heartsList.Count && !isHit)
+        {
+            heartsList[lives].SetActive(true);
+            lives++;
+            Destroy(other.gameObject);
+        }
+    }
+
     private void GetHit(Transform enemy)
     {
         Vector2 knockback = new Vector2(Mathf.Sign(transform.position.x - enemy.position.x), 1f);
@@ -131,6 +152,7 @@ public class PlayerMovement : MonoBehaviour
         playerRB.linearVelocity = knockback * hitPower;
 
         lives--;
+        heartsList[lives].SetActive(false);
         isHit = true;
         isOnGround = false;
         Invoke(nameof(GetUnHit), 2f);
@@ -162,6 +184,15 @@ public class PlayerMovement : MonoBehaviour
         if (isHit)
         {
             Invoke(nameof(Flashing), hitTime);
+        }
+    }
+
+    private void GameOver()
+    {
+        if(lives <= 0)
+        {
+            Instantiate(GameOverEffect, transform.position, Quaternion.identity);
+            gameObject.SetActive(false);
         }
     }
 }
