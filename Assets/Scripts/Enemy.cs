@@ -1,36 +1,27 @@
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    [SerializeField] float speed = 2;
+    [SerializeField] protected float speed;
+    public int killPoints { get; protected set; }
+    public int hitPoints { get; protected set; }
 
-    private bool isMovingRight;
-    private Vector2 v;
+    protected bool isMovingRight;
+    protected Vector2 v;
 
-    private Rigidbody2D enemyRB;
-    private SpriteRenderer enemySR;
-    private Animator enemyAnimator;
+    protected Rigidbody2D enemyRB;
+    protected SpriteRenderer enemySR;
+    protected Animator enemyAnimator;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         enemyRB = GetComponent<Rigidbody2D>();
         enemySR = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
         isMovingRight = true;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    void FixedUpdate()
-    {
-        EnemyMove();
-    }
     //enemy move and flip
-    private void EnemyMove()
+    protected virtual void EnemyMove()
     {
         v = enemyRB.linearVelocity;
         if (isMovingRight)
@@ -46,20 +37,20 @@ public class EnemyMovement : MonoBehaviour
         enemyRB.linearVelocity = v;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected virtual void OnTriggerExit2D(Collider2D other)
     {
-        if (collision.collider.CompareTag("Border"))
+        if (other.CompareTag("Border"))
         {
             isMovingRight = !isMovingRight;
 
-            Vector2 pos = transform.position;
-            pos.x += isMovingRight ? 0.1f : -0.1f;
-            transform.position = pos;
+            v = transform.position;
+            v.x += isMovingRight ? 0.1f : -0.1f;
+            transform.position = v;
             return;
         }
     }
 
-    public void DestroyEnemy()
+    public virtual void DestroyEnemy()
     {
         enemyAnimator.SetBool("isHit", true);
         enemyRB.simulated = false;
@@ -67,7 +58,7 @@ public class EnemyMovement : MonoBehaviour
         Invoke(nameof(DestroyThisEnemy), 1f);
     }
 
-    private void DestroyThisEnemy()
+    protected virtual void DestroyThisEnemy()
     {
         Destroy(gameObject);
     }

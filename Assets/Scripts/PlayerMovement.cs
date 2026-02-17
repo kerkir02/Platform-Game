@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private int score = 0;
-    [SerializeField] private int coinPoints = 5;
     [SerializeField] private int lives = 3;
     [SerializeField] private float hitPower = 5f;
     [SerializeField] private float hitTime = 0.1f;
@@ -27,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isHit;
     private int jumpNumber;
     private Vector2 v;
+    private Enemy enemy;
+    private Collectibles collectible;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -104,8 +105,15 @@ public class PlayerMovement : MonoBehaviour
         //collision with enemy
         if (collision.collider.CompareTag("Enemy"))
         {
-            if (isHit)
+            enemy = collision.collider.GetComponent<Enemy>();
+            if (isHit || enemy == null)
             {
+                return;
+            }
+            if (enemy.killPoints == 0)
+            {
+                ScoreUpdate(enemy.hitPoints);
+                GetHit(collision.transform);
                 return;
             }
             //check is jumped on his head
@@ -113,17 +121,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (contact.normal.y > 0.5f)
                 {
-                    EnemyMovement enemy = collision.collider.GetComponent<EnemyMovement>();
-
-                    if (enemy != null)
-                    {
-                        enemy.DestroyEnemy();
-                    }
-
+                    ScoreUpdate(enemy.killPoints);
+                    enemy.DestroyEnemy();
                     return;
                 }
             }
+            ScoreUpdate(enemy.hitPoints);
             GetHit(collision.transform);
+            return;
         }
         if (collision.collider.CompareTag("Ground"))
         {
@@ -141,16 +146,24 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("RedGem") && lives < heartsList.Count && !isHit)
+        if (other.CompareTag("Collectibles") && !isHit)
         {
-            heartsList[lives].SetActive(true);
-            lives++;
-            Destroy(other.gameObject);
-        }
-        if (other.CompareTag("Coin") && !isHit)
-        {
-            ScoreUpdate(coinPoints);
-            Destroy(other.gameObject);
+            collectible = other.GetComponent<Collectibles>();
+            if (collectible == null)
+            {
+                return;
+            }
+            if (collectible.value != 0)
+            {
+                ScoreUpdate(collectible.value);
+                Destroy(other.gameObject);
+            }
+            else if (collectible.value == 0 && lives < heartsList.Count)
+            {
+                heartsList[lives].SetActive(true);
+                lives++;
+                Destroy(other.gameObject);
+            }
         }
     }
 
