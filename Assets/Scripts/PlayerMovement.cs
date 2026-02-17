@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,11 +10,14 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private int score = 0;
+    [SerializeField] private int coinPoints = 5;
     [SerializeField] private int lives = 3;
     [SerializeField] private float hitPower = 5f;
     [SerializeField] private float hitTime = 0.1f;
     [SerializeField] private GameObject GameOverEffect;
     [SerializeField] List<GameObject> heartsList;
+    [SerializeField] private TMP_Text scoreText;
 
     private float verticalInput;
     private float horizontalInput;
@@ -33,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         jumpNumber = 0;
         playerSR.enabled = true;
         lives = heartsList.Count;
+        score = 0;
     }
 
     // Update is called once per frame
@@ -142,6 +147,11 @@ public class PlayerMovement : MonoBehaviour
             lives++;
             Destroy(other.gameObject);
         }
+        if (other.CompareTag("Coin") && !isHit)
+        {
+            ScoreUpdate(coinPoints);
+            Destroy(other.gameObject);
+        }
     }
 
     private void GetHit(Transform enemy)
@@ -194,5 +204,24 @@ public class PlayerMovement : MonoBehaviour
             Instantiate(GameOverEffect, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
         }
+    }
+
+    private void ScoreUpdate(int value)
+    {
+        score += value;
+        if(score < 0)
+        {
+            score = 0;
+        }
+        scoreText.text = "Score:" + ScoreZeros() + score;
+    }
+    private string ScoreZeros()
+    {
+        string zeros = "";
+        for(int i = 6; i > Mathf.Abs(score).ToString().Length; i--)
+        {
+            zeros += "0";
+        }
+        return zeros;
     }
 }
