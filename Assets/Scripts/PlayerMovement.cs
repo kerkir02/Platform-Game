@@ -153,12 +153,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 return;
             }
-            if (collectible.value != 0)
+            if (collectible.type == Collectibles.CollectType.Score)
             {
                 ScoreUpdate(collectible.value);
                 Destroy(other.gameObject);
             }
-            else if (collectible.value == 0 && lives < heartsList.Count)
+            else if (collectible.type == Collectibles.CollectType.Heart && lives < heartsList.Count)
             {
                 heartsList[lives].SetActive(true);
                 lives++;

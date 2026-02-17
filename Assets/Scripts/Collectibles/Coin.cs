@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Collectibles : MonoBehaviour
+public class Coin : Collectibles
 {
-    public int value { get; protected set; }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        value = 5;
+        type = CollectType.Score;
     }
 
     // Update is called once per frame
