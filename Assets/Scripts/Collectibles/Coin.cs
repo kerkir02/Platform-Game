@@ -8,10 +8,4 @@ public class Coin : Collectibles
         value = 5;
         type = CollectType.Score;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

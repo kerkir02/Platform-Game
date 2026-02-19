@@ -8,10 +8,4 @@ public class GreenGem : Collectibles
         value = 10;
         type = CollectType.Score;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

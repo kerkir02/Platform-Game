@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Saw : Enemy
+public class SpikedSlime : Enemy
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
@@ -10,13 +10,9 @@ public class Saw : Enemy
         hitPoints = -5;
     }
 
+
     void FixedUpdate()
     {
-        //EnemyMove();
-    }
-
-    protected override void EnemyMove()
-    {
-        enemyRB.angularVelocity = speed;
+        EnemyMove();
     }
 }

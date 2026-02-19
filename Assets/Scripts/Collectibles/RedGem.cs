@@ -8,10 +8,4 @@ public class RedGem : Collectibles
         value = 0;
         type = CollectType.Heart;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

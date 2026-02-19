@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 v;
     private Enemy enemy;
     private Collectibles collectible;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,11 +42,10 @@ public class PlayerMovement : MonoBehaviour
         score = 0;
     }
 
-    // Update is called once per frame
+    // Handles input, animations and game over check each frame
     void Update()
     {
         GameOver();
-        //verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxisRaw("Horizontal");
         PlayerAnimationMove();
 
@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Handles physics-based movement and jumping
     void FixedUpdate()
     {
         PlayerMove();
@@ -64,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Applies vertical velocity to perform a jump
     private void PlayerJump()
     {
         v = playerRB.linearVelocity;
@@ -75,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
         jumpNumber++;
     }
 
+    // Applies horizontal movement based on input
     private void PlayerMove()
     {
         v = playerRB.linearVelocity;
@@ -82,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
         playerRB.linearVelocity = v;
     }
 
+    // Updates animator parameters and sprite direction
     private void PlayerAnimationMove()
     {
         isInMove = horizontalInput != 0f;
@@ -89,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
         playerAnimator.SetBool("isOnGround", isOnGround);
         playerAnimator.SetBool("isHit", isHit);
 
-        //turn player
         if (horizontalInput > 0f)
         {
             playerSR.flipX = false;
@@ -100,9 +103,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Handles collision with enemies and ground
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //collision with enemy
         if (collision.collider.CompareTag("Enemy"))
         {
             enemy = collision.collider.GetComponent<Enemy>();
@@ -110,13 +113,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 return;
             }
+
             if (enemy.killPoints == 0)
             {
                 ScoreUpdate(enemy.hitPoints);
                 GetHit(collision.transform);
                 return;
             }
-            //check is jumped on his head
+
             foreach (ContactPoint2D contact in collision.contacts)
             {
                 if (contact.normal.y > 0.5f)
@@ -126,10 +130,12 @@ public class PlayerMovement : MonoBehaviour
                     return;
                 }
             }
+
             ScoreUpdate(enemy.hitPoints);
             GetHit(collision.transform);
             return;
         }
+
         if (collision.collider.CompareTag("Ground"))
         {
             foreach (ContactPoint2D contact in collision.contacts)
@@ -144,6 +150,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Handles trigger interaction with collectibles
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Collectibles") && !isHit)
@@ -153,6 +160,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 return;
             }
+
             if (collectible.type == Collectibles.CollectType.Score)
             {
                 ScoreUpdate(collectible.value);
@@ -167,6 +175,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Applies knockback, reduces life and starts hit effect
     private void GetHit(Transform enemy)
     {
         Vector2 knockback = new Vector2(Mathf.Sign(transform.position.x - enemy.position.x), 1f);
@@ -182,6 +191,7 @@ public class PlayerMovement : MonoBehaviour
         UnFlashing();
     }
 
+    // Resets hit state and stops flashing effect
     private void GetUnHit()
     {
         CancelInvoke(nameof(GetUnHit));
@@ -190,7 +200,8 @@ public class PlayerMovement : MonoBehaviour
         isHit = false;
         playerSR.enabled = true;
     }
-    //flashing with sprite renderer
+
+    // Enables sprite visibility and schedules hiding (flashing effect)
     private void Flashing()
     {
         CancelInvoke(nameof(Flashing));
@@ -200,6 +211,8 @@ public class PlayerMovement : MonoBehaviour
             Invoke(nameof(UnFlashing), hitTime);
         }
     }
+
+    // Disables sprite visibility and schedules showing (flashing effect)
     private void UnFlashing()
     {
         CancelInvoke(nameof(UnFlashing));
@@ -210,28 +223,32 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Checks if player has no lives left and triggers game over
     private void GameOver()
     {
-        if(lives <= 0)
+        if (lives <= 0)
         {
             Instantiate(GameOverEffect, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
         }
     }
 
+    // Updates score value and refreshes UI text
     private void ScoreUpdate(int value)
     {
         score += value;
-        if(score < 0)
+        if (score < 0)
         {
             score = 0;
         }
         scoreText.text = "Score:" + ScoreZeros() + score;
     }
+
+    // Generates leading zeros for score formatting
     private string ScoreZeros()
     {
         string zeros = "";
-        for(int i = 6; i > Mathf.Abs(score).ToString().Length; i--)
+        for (int i = 6; i > Mathf.Abs(score).ToString().Length; i--)
         {
             zeros += "0";
         }
