@@ -173,6 +173,10 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+        if (other.CompareTag("Door"))
+        {
+            Debug.Log("Level Done");
+        }
     }
 
     // Applies knockback, reduces life and starts hit effect
@@ -184,6 +188,10 @@ public class PlayerMovement : MonoBehaviour
         playerRB.linearVelocity = knockback * hitPower;
 
         lives--;
+        if(jumpNumber > 0)
+        {
+            jumpNumber--;
+        }
         heartsList[lives].SetActive(false);
         isHit = true;
         isOnGround = false;

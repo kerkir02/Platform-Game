@@ -6,7 +6,7 @@ public class Slime : Enemy
     protected override void Start()
     {
         base.Start();
-        killPoints = 1;
+        killPoints = 2;
         hitPoints = -3;
     }
 

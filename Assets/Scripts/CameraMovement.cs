@@ -4,6 +4,7 @@ public class CameraMovement : MonoBehaviour
 {
     [SerializeField] Transform player;
     [SerializeField] Transform hearts;
+    [SerializeField] float yBorder = -8;
 
     private Vector3 heartsStartPosition;
 
@@ -23,18 +24,38 @@ public class CameraMovement : MonoBehaviour
     // Makes the camera follow the player's position
     private void CameraFollow()
     {
-        transform.position = new Vector3(
-            player.position.x,
-            player.position.y,
-            transform.position.z);
+        if (player.position.y > yBorder)
+        {
+            transform.position = new Vector3(
+                player.position.x,
+                player.position.y,
+                transform.position.z);
+        }
+        else
+        {
+            transform.position = new Vector3(
+                player.position.x,
+                yBorder,
+                transform.position.z);
+        }
     }
 
     // Keeps the hearts UI positioned relative to the player
     private void HeartsFollow()
     {
-        hearts.position = new Vector3(
-            player.position.x + heartsStartPosition.x,
-            player.position.y + heartsStartPosition.y,
-            hearts.position.z);
+        if (player.position.y > yBorder)
+        {
+            hearts.position = new Vector3(
+                player.position.x + heartsStartPosition.x,
+                player.position.y + heartsStartPosition.y,
+                hearts.position.z);
+        }
+        else
+        {
+            hearts.position = new Vector3(
+                player.position.x + heartsStartPosition.x,
+                yBorder + heartsStartPosition.y,
+                hearts.position.z);
+        }
     }
 }

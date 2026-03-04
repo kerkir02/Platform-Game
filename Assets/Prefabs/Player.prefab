@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435fd07239ec585438be12d14943b35e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 8
-  jumpForce: 7
+  speed: 6
+  jumpForce: 6
   score: 0
   lives: 5
   hitPower: 5

@@ -6,7 +6,7 @@ public class Bee : Enemy
     protected override void Start()
     {
         base.Start();
-        killPoints = 0;
+        killPoints = 5;
         hitPoints = -4;
     }
 
