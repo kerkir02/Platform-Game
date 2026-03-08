@@ -11,6 +11,7 @@ public class CameraMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        hearts.gameObject.SetActive(true);
         heartsStartPosition = new Vector3(7.5f, 4f, 0f);
     }
 
