@@ -3153,6 +3153,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 653816683830309377, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+    - {fileID: 2146144706569903928, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+    - {fileID: 6941662671250335766, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+    - {fileID: 539514441291734165, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4855402916415155046, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
       insertIndex: -1
@@ -11111,6 +11114,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 479e0f5f1236c774b890b0a89ec86b4c, type: 3}
+--- !u!1 &1809546668 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2146144706569903928, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+  m_PrefabInstance: {fileID: 2001532000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1812164920 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 203122777820384051, guid: 6a7ece521c57eaf4587901b8383eb615, type: 3}
@@ -12137,6 +12145,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2146144706569903928, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4855402916415155046, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -12221,10 +12233,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7160062025865981723, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12292,6 +12300,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a7ece521c57eaf4587901b8383eb615, type: 3}
+--- !u!114 &2016940970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7387274160330839025, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+  m_PrefabInstance: {fileID: 2001532000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!4 &2023387401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8911676192261732445, guid: 9b5c83a4ba0d90a46b522f310a0dbfc4, type: 3}
@@ -12415,6 +12434,14 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 319267195}
+    - target: {fileID: 1083605518007934598, guid: 63124c49a4c5e164d815cb62fd0f98b2, type: 3}
+      propertyPath: nextLevelText
+      value: 
+      objectReference: {fileID: 1809546668}
+    - target: {fileID: 1083605518007934598, guid: 63124c49a4c5e164d815cb62fd0f98b2, type: 3}
+      propertyPath: finalScoreText
+      value: 
+      objectReference: {fileID: 2016940970}
     - target: {fileID: 1083605518007934598, guid: 63124c49a4c5e164d815cb62fd0f98b2, type: 3}
       propertyPath: 'heartsList.Array.data[0]'
       value: 

@@ -10,17 +10,20 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 5f;
-    [SerializeField] private int score = 0;
+    //[SerializeField] private int score = 0;
     [SerializeField] private int lives = 3;
     [SerializeField] private float hitPower = 5f;
     [SerializeField] private float hitTime = 0.1f;
     [SerializeField] private GameObject GameOverEffect;
     [SerializeField] List<GameObject> heartsList;
     [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private TMP_Text finalScoreText;
+    [SerializeField] private GameObject nextLevelText;
 
     private float verticalInput;
     private float horizontalInput;
     private bool isInMove;
+    private bool canMove;
     private bool spaceDown;
     private bool isOnGround;
     private bool isHit;
@@ -28,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 v;
     private Enemy enemy;
     private Collectibles collectible;
+
+    GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,7 +44,10 @@ public class PlayerMovement : MonoBehaviour
         jumpNumber = 0;
         playerSR.enabled = true;
         lives = heartsList.Count;
-        score = 0;
+        gameManager = GameManager.Instance;
+        nextLevelText.SetActive(false);
+        canMove = true;
+        scoreText.text = gameManager.ScoreUpdate(0);
     }
 
     // Handles input, animations and game over check each frame
@@ -58,10 +66,13 @@ public class PlayerMovement : MonoBehaviour
     // Handles physics-based movement and jumping
     void FixedUpdate()
     {
-        PlayerMove();
-        if (spaceDown && jumpNumber < 2)
+        if (canMove)
         {
-            PlayerJump();
+            PlayerMove();
+            if (spaceDown && jumpNumber < 2)
+            {
+                PlayerJump();
+            }
         }
     }
 
@@ -116,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (enemy.killPoints == 0)
             {
-                ScoreUpdate(enemy.hitPoints);
+                scoreText.text = gameManager.ScoreUpdate(enemy.hitPoints);
                 GetHit(collision.transform);
                 return;
             }
@@ -125,13 +136,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (contact.normal.y > 0.5f)
                 {
-                    ScoreUpdate(enemy.killPoints);
+                    scoreText.text = gameManager.ScoreUpdate(enemy.killPoints);
                     enemy.DestroyEnemy();
                     return;
                 }
             }
 
-            ScoreUpdate(enemy.hitPoints);
+            scoreText.text = gameManager.ScoreUpdate(enemy.hitPoints);
             GetHit(collision.transform);
             return;
         }
@@ -163,7 +174,8 @@ public class PlayerMovement : MonoBehaviour
 
             if (collectible.type == Collectibles.CollectType.Score)
             {
-                ScoreUpdate(collectible.value);
+
+                scoreText.text = gameManager.ScoreUpdate(collectible.value);
                 Destroy(other.gameObject);
             }
             else if (collectible.type == Collectibles.CollectType.Heart && lives < heartsList.Count)
@@ -175,7 +187,11 @@ public class PlayerMovement : MonoBehaviour
         }
         if (other.CompareTag("Door"))
         {
-            Debug.Log("Level Done");
+            nextLevelText.SetActive(true);
+            scoreText.gameObject.SetActive(false);
+            canMove = false;
+            finalScoreText.text = gameManager.ScoreUpdate(0);
+            playerRB.linearVelocity = Vector2.zero;
         }
     }
 
@@ -240,26 +256,26 @@ public class PlayerMovement : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
+    /*
     // Updates score value and refreshes UI text
     private void ScoreUpdate(int value)
     {
-        score += value;
-        if (score < 0)
+        gameManager.score += value;
+        if (gameManager.score < 0)
         {
-            score = 0;
+            gameManager.score = 0;
         }
-        scoreText.text = "Score:" + ScoreZeros() + score;
+        scoreText.text = "Score:" + ScoreZeros() + gameManager.score;
     }
 
     // Generates leading zeros for score formatting
     private string ScoreZeros()
     {
         string zeros = "";
-        for (int i = 6; i > Mathf.Abs(score).ToString().Length; i--)
+        for (int i = 6; i > Mathf.Abs(gameManager.score).ToString().Length; i--)
         {
             zeros += "0";
         }
         return zeros;
-    }
+    }*/
 }

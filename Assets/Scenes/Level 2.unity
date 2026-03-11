@@ -1837,6 +1837,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 469647106}
     - target: {fileID: 1083605518007934598, guid: 63124c49a4c5e164d815cb62fd0f98b2, type: 3}
+      propertyPath: nextLevelText
+      value: 
+      objectReference: {fileID: 469647108}
+    - target: {fileID: 1083605518007934598, guid: 63124c49a4c5e164d815cb62fd0f98b2, type: 3}
+      propertyPath: finalScoreText
+      value: 
+      objectReference: {fileID: 469647107}
+    - target: {fileID: 1083605518007934598, guid: 63124c49a4c5e164d815cb62fd0f98b2, type: 3}
       propertyPath: 'heartsList.Array.data[0]'
       value: 
       objectReference: {fileID: 1045453827}
@@ -2720,10 +2728,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7160062025865981723, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2740,6 +2744,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &469647107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7387274160330839025, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+  m_PrefabInstance: {fileID: 469647105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &469647108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2146144706569903928, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+  m_PrefabInstance: {fileID: 469647105}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &493784209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3815,6 +3835,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2200543229531523724, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+      propertyPath: quickMenu
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3761125951570017290, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
       propertyPath: m_RenderMode
       value: 2
@@ -3930,6 +3954,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 653816683830309377, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+    - {fileID: 2146144706569903928, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+    - {fileID: 6941662671250335766, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+    - {fileID: 539514441291734165, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4855402916415155046, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
       insertIndex: -1

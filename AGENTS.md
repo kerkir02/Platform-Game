@@ -2,7 +2,7 @@
 - Project name: Platform Game
 - Unity version: Unity 6000.3.5f2
 - Active game object:
-  - Name: GameManager
+  - Name: Canvas
   - Tag: Untagged
-  - Layer: Default
+  - Layer: UI
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

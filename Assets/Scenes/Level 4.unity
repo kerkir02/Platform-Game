@@ -3395,6 +3395,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 469647106}
     - target: {fileID: 1083605518007934598, guid: 63124c49a4c5e164d815cb62fd0f98b2, type: 3}
+      propertyPath: nextLevelText
+      value: 
+      objectReference: {fileID: 469647108}
+    - target: {fileID: 1083605518007934598, guid: 63124c49a4c5e164d815cb62fd0f98b2, type: 3}
+      propertyPath: finalScoreText
+      value: 
+      objectReference: {fileID: 469647107}
+    - target: {fileID: 1083605518007934598, guid: 63124c49a4c5e164d815cb62fd0f98b2, type: 3}
       propertyPath: 'heartsList.Array.data[0]'
       value: 
       objectReference: {fileID: 1045453827}
@@ -5119,6 +5127,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &469647107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7387274160330839025, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+  m_PrefabInstance: {fileID: 469647105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &469647108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2146144706569903928, guid: d5c0c83f477142b4fbbdce83812061bf, type: 3}
+  m_PrefabInstance: {fileID: 469647105}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &476625696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8523828838540271809, guid: 6a701c452bdc2384fa01bccd692ccbdf, type: 3}
