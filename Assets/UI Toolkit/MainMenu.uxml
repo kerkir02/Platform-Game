@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuStyleSheet.uss?fileID=7433441132597879392&amp;guid=282b207c9f994a240b2d3a390a166cff&amp;type=3#MainMenuStyleSheet"/>
+    <ui:VisualElement name="center-panel" class="centerPanel" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center;">
+        <ui:VisualElement name="panel-container" style="flex-grow: 1; background-image: none; -unity-background-scale-mode: scale-and-crop;">
+            <ui:Label text="PLATFORM&#10;GAME" name="headLine__Label" style="-unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Electronic%20Highway%20Sign.TTF?fileID=12800000&amp;guid=8a2b9e2a607dd2143b58c44bc32410b4&amp;type=3#Electronic Highway Sign&quot;); font-size: 150px; letter-spacing: 0; word-spacing: 50px; -unity-paragraph-spacing: 28px; text-shadow: 2px 0 10px rgb(51, 51, 51); -unity-text-outline-color: rgb(0, 0, 0); -unity-text-outline-width: 3px; color: rgb(255, 255, 255); white-space: nowrap; -unity-font-style: italic;"/>
+            <ui:Button text="PLAY" name="play__Button" class="menuRegularButton"/>
+            <ui:Button text="CHOOSE LEVEL" name="levels__Button" class="menuRegularButton" style="-unity-background-image-tint-color: rgb(255, 224, 87);"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
