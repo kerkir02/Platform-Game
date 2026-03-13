@@ -4,10 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class BottonsScript : MonoBehaviour
 {
-    [SerializeField] GameObject quickMenu;
+    [SerializeField] private GameObject quickMenu;
 
-    GameManager gameManager;
-    void Start()
+    private GameManager gameManager;
+
+    void Awake()
     {
         gameManager = GameManager.Instance;
     }
@@ -33,20 +34,37 @@ public class BottonsScript : MonoBehaviour
     }
     public void QuickMenuOpen()
     {
-        if (quickMenu.activeSelf) {
+        quickMenu.SetActive(!quickMenu.activeSelf);
+        /*if (quickMenu.activeSelf) {
             quickMenu.SetActive(false);
         }
         else
         {
             quickMenu.SetActive(true);
-        }
+        }*/
     }
     public void MusicActive()
     {
-
+        gameManager.ChangeMusic();
+        gameManager.PlayMusic(SceneManager.GetActiveScene().buildIndex);
     }
     public void SoundActive()
     {
+        gameManager.ChangeSound();
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(gameManager.IsMusicOn()) gameManager.PlayMusic(scene.buildIndex);
+    }
+    private void OnEnable()
+    {
+        // Rejestrujemy callback
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
+    private void OnDisable()
+    {
+        // Odłączamy przy wyłączeniu obiektu
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

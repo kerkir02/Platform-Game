@@ -1,0 +1,36 @@
+Event	ID	Name			Wwise Object Path	Notes
+	325086926	Play_sfx_select			\Default Work Unit\Player\Play_sfx_select	
+	1278378707	Play_menu			\Default Work Unit\Music\Play_menu	
+	1442912595	Play_sfx_gem			\Default Work Unit\Player\Play_sfx_gem	
+	1648311313	Play_sfx_jump_high			\Default Work Unit\Player\Play_sfx_jump_high	
+	1721105142	Play_sfx_throw			\Default Work Unit\Player\Play_sfx_throw	
+	2550497446	Play_sfx_bump			\Default Work Unit\Player\Play_sfx_bump	
+	3137795997	Play_sfx_hurt			\Default Work Unit\Player\Play_sfx_hurt	
+	3290827817	Play_sfx_disappear			\Default Work Unit\Player\Play_sfx_disappear	
+	3659125936	Play_level4			\Default Work Unit\Music\Play_level4	
+	3659125937	Play_level5			\Default Work Unit\Music\Play_level5	
+	3659125941	Play_level1			\Default Work Unit\Music\Play_level1	
+	3659125942	Play_level2			\Default Work Unit\Music\Play_level2	
+	3659125943	Play_level3			\Default Work Unit\Music\Play_level3	
+	3740002126	Play_sfx_jump			\Default Work Unit\Player\Play_sfx_jump	
+	3833599577	Play_sfx_coin			\Default Work Unit\Player\Play_sfx_coin	
+	4109499731	Play_sfx_magic			\Default Work Unit\Player\Play_sfx_magic	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	136637369	sfx_disappear	.cache\A1\{A1429E41-BCE6-A7D0-F096-DADCBC5DE0E7}.wem		\Containers\Default Work Unit\Player\sfx_disappear		52704
+	152188220	sfx_jump	.cache\B8\{B8E3FFDE-D2AB-4C65-388C-4F353AD1BA3F}.wem		\Containers\Default Work Unit\Player\sfx_jump		13948
+	199050402	level5	.cache\65\{65F224D2-9A08-6B1D-E69A-E6E1A01F5FA0}.wem		\Containers\Default Work Unit\Music\level5		9523292
+	200623442	sfx_select	.cache\14\{140A55BF-6427-F5AA-1AC6-DA89602A75C1}.wem		\Containers\Default Work Unit\Player\sfx_select		14872
+	360826063	sfx_gem	.cache\E1\{E15B7B1E-2F9E-0E7D-9671-27A9089ECDD5}.wem		\Containers\Default Work Unit\Player\sfx_gem		24668
+	370958411	sfx_jump-high	.cache\D5\{D576C9D4-1176-A32A-61D2-81F57738577C}.wem		\Containers\Default Work Unit\Player\sfx_jump-high		38368
+	411212192	sfx_bump	.cache\A5\{A58E5FC4-DAF8-EA93-4BE0-DCD6564E480A}.wem		\Containers\Default Work Unit\Player\sfx_bump		15840
+	444427869	level1	.cache\DD\{DDB9E8B7-3BE8-56AF-D869-BDC222B7D680}.wem		\Containers\Default Work Unit\Music\level1		18424412
+	645127956	level4	.cache\0F\{0F2B5B88-D3AA-673A-F435-AAF8BCD16D50}.wem		\Containers\Default Work Unit\Music\level4		10928732
+	672901824	sfx_throw	.cache\CD\{CD140684-C25B-BBFF-714D-6A2CAA1AAE05}.wem		\Containers\Default Work Unit\Player\sfx_throw		15840
+	697674025	sfx_hurt	.cache\A1\{A1331F90-3BBB-BA57-9E53-165566F1EB41}.wem		\Containers\Default Work Unit\Player\sfx_hurt		17888
+	766342919	sfx_coin	.cache\64\{64C5288C-9C89-A166-D62C-787BF9B6E647}.wem		\Containers\Default Work Unit\Player\sfx_coin		18400
+	906705716	menu	.cache\D4\{D41777D7-4C70-41FF-E55D-F7B18DEE6240}.wem		\Containers\Default Work Unit\Music\menu		17349212
+	997578715	level2	.cache\14\{14C00256-0C63-E91F-20BB-DB2B4366BD50}.wem		\Containers\Default Work Unit\Music\level2		27271772
+	1070076189	level3	.cache\EF\{EFBB0D6A-1191-21A5-7B05-5FEE180F963B}.wem		\Containers\Default Work Unit\Music\level3		12372572
+	1071121819	sfx_magic	.cache\13\{133B4D58-21C1-DF66-2603-39478A263BF4}.wem		\Containers\Default Work Unit\Player\sfx_magic		24572
+

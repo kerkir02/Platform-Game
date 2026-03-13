@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{08229E5E-EECE-4A30-A16D-05258A98440E}" SchemaVersion="133">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{08229E5E-EECE-4A30-A16D-05258A98440E}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Music" ID="{B7D11FF8-7086-4C1E-8352-7997793F0DFC}" ShortID="291126341">
+					<ChildrenList>
+						<Event Name="Play_level3" ID="{DA680FA1-D088-4BDD-8732-2F827C4E3B13}">
+							<ChildrenList>
+								<Action Name="" ID="{0B8EF5BF-FC20-4CB0-BDA3-5EA7E6292DC3}" ShortID="346612916">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="level3" ID="{D7B113AD-5C6F-47F6-B76A-1A181DFBA349}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_level1" ID="{B5D9E66A-F034-4049-A57A-A63A0E5F47FC}">
+							<ChildrenList>
+								<Action Name="" ID="{B8960000-F187-443B-BFBD-9DD570D7E3DB}" ShortID="1022478866">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="level1" ID="{5783DB99-DF28-44FB-A56E-539EAA0B41FA}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_level2" ID="{3083CDF6-3F82-406A-B125-A57FEB7779B6}">
+							<ChildrenList>
+								<Action Name="" ID="{D83227C8-349F-45FC-90A0-F00728EB2273}" ShortID="888828047">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="level2" ID="{61546051-4370-467A-9D60-A7FB0A263F9B}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_level4" ID="{3F1E7B0F-1F67-4836-AF6F-E254741B486D}">
+							<ChildrenList>
+								<Action Name="" ID="{52ADD4B3-57BF-4653-B073-E67FD1FD29E5}" ShortID="670860824">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="level4" ID="{F91CF314-0335-48E5-81CB-C2C6EDAB1ACD}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_level5" ID="{C1BCBCE1-5B19-480C-8B3D-1BBE1D8E4322}">
+							<ChildrenList>
+								<Action Name="" ID="{8B8CD0F8-1CA6-4846-B028-6904C0DBA774}" ShortID="118563785">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="level5" ID="{3E929C14-483F-4573-8959-D70EBB6F0B96}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_menu" ID="{463D6198-EE11-4DD0-99B4-D079E5F99C16}">
+							<ChildrenList>
+								<Action Name="" ID="{1BF3BD6F-3307-4893-9D2F-F1E9C091D439}" ShortID="791867554">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="menu" ID="{9CE398B0-18D7-4918-B1D4-B25BB247B56F}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Player" ID="{4A862404-53A5-49E2-9BF5-41F67362B2C3}" ShortID="224257034">
+					<ChildrenList>
+						<Event Name="Play_sfx_magic" ID="{6CB29BE9-B45D-4420-BA4C-FF10498640A5}">
+							<ChildrenList>
+								<Action Name="" ID="{2E5059C2-C53A-4FA3-9142-6B4147C67873}" ShortID="911321357">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_magic" ID="{36012F05-6951-4D45-B0A0-3801A090618D}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_disappear" ID="{DC2A8786-A227-45AB-BAE7-6E736FC6E17F}">
+							<ChildrenList>
+								<Action Name="" ID="{CB146049-F5DE-4F93-B90B-BDDDEF09C4BE}" ShortID="310340719">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_disappear" ID="{74EA5865-70DE-4AB2-9C91-BE21FC93126B}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_jump" ID="{C3DD160E-1F66-4F8D-8247-8297072106AE}">
+							<ChildrenList>
+								<Action Name="" ID="{350DDB54-A086-45EB-B22F-FA5D1688D381}" ShortID="759341830">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_jump" ID="{FFAD2AA4-B8A2-4FAE-BFF8-16814E2F8BD7}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_coin" ID="{52C33C06-0A18-46EA-AE7F-8AA79B9F07F6}">
+							<ChildrenList>
+								<Action Name="" ID="{0E586022-3C00-455B-BFF3-29F16A98E5F6}" ShortID="326581797">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_coin" ID="{48F48B9B-704A-4577-9B99-3DA81734D249}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_select" ID="{8DFCE02E-ED98-4976-B3C8-2F56FC22893D}">
+							<ChildrenList>
+								<Action Name="" ID="{9320D073-0560-45AE-BDFF-F336D6A4D237}" ShortID="275349011">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_select" ID="{958F29CD-5A3C-4BBA-95E4-B6A4653564BF}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_throw" ID="{B5409370-CA33-48C2-AF3F-67CF63F88FDB}">
+							<ChildrenList>
+								<Action Name="" ID="{8638EDAD-25B6-4FD2-98CA-0A284E043AC5}" ShortID="275372059">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_throw" ID="{90D46D13-A6D7-4F18-BBEF-C2366189CC02}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_bump" ID="{EB5FC8D6-EA14-490B-9A86-DE97B8D1B962}">
+							<ChildrenList>
+								<Action Name="" ID="{F879A374-B020-459D-97E8-44CD1BE81156}" ShortID="697128423">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_bump" ID="{499AAD90-99F5-47A9-A3F6-BCB12B9916B8}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_hurt" ID="{2C67016C-390B-4F41-AF73-B3CE4675D689}">
+							<ChildrenList>
+								<Action Name="" ID="{8ECC2A65-9A0B-4E1A-B1EA-DE989CB79F58}" ShortID="346469917">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_hurt" ID="{DD74B3AC-0FED-459E-AFB0-00BD0F07211F}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_gem" ID="{4BB2A54F-90E8-4A14-958F-7A4E09C6B2E8}">
+							<ChildrenList>
+								<Action Name="" ID="{D1A9BB35-9528-4FC2-A41B-E4DDEC49E3F7}" ShortID="14429034">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_gem" ID="{6234BDB9-6485-48B0-8D10-86300C1B3735}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_jump_high" ID="{923DFD5D-3809-47DA-B310-852DE485676B}">
+							<ChildrenList>
+								<Action Name="" ID="{7957CDD0-99D4-460E-947F-EA36B370463C}" ShortID="19767437">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_jump-high" ID="{5E7708FE-BB42-4949-9F9F-2705880B2A32}" WorkUnitID="{CF5EE28F-68D0-4249-9F3A-A23550AEE4BD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
