@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{88E24B07-B631-4BDB-BFD6-EC92CD0BD1C8}",
     "Language": "SFX",
-    "Hash": "{1166E624-8BB8-8DE7-EBEE-F4C83815AF10}",
+    "Hash": "{7B6359B3-930C-982E-D9BC-3BE9AE679E52}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Unity",
     "ShortName": "Unity",
     "Path": "Unity.bnk",
@@ -360,6 +360,6 @@
     ]
    }
   ],
-  "FileHash": "{231E6D97-9ABB-86AC-0DC6-D9E41E9EAD35}"
+  "FileHash": "{C813D8F1-CE41-C459-3ABE-EE9E10485EAF}"
  }
 }

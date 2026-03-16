@@ -15,25 +15,30 @@ public class BottonsScript : MonoBehaviour
     //Buttons management
     public void NextLevelLoad()
     {
+        gameManager.PlayClickSound();
         gameManager.SetSaveScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void LevelLoad(int level)
     {
+        gameManager.PlayClickSound();
         SceneManager.LoadScene(level);
     }
     public void RestartLevel()
     {
+        gameManager.PlayClickSound();
         gameManager.LoadSaveScore();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void LoadMenu()
     {
+        gameManager.PlayClickSound();
         gameManager.MenuScore();
         SceneManager.LoadScene(0);
     }
     public void QuickMenuOpen()
     {
+        gameManager.PlayClickSound();
         quickMenu.SetActive(!quickMenu.activeSelf);
         /*if (quickMenu.activeSelf) {
             quickMenu.SetActive(false);
@@ -45,6 +50,7 @@ public class BottonsScript : MonoBehaviour
     }
     public void MusicActive()
     {
+        gameManager.PlayClickSound();
         gameManager.ChangeMusic();
         gameManager.PlayMusic(SceneManager.GetActiveScene().buildIndex);
     }

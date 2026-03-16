@@ -2716,6 +2716,42 @@ MonoBehaviour:
   - idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 7b4c565d0ca4bb04498ae81ac50e0be9, type: 2}
+  jumpSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9f95cd440d184f945a71d404896ea734, type: 2}
+  hitSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: bf2f9c355527b11408693f3b613beaf6, type: 2}
+  gameOverSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8808416281615894da604e0ce340eca6, type: 2}
+  hurtSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4396db4be47a5444bafdb1f0d4ea9e35, type: 2}
+  coinSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b04adfdff78854f4d9664cdd87c19b6c, type: 2}
+  heartSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: bf51f2067a97bf74d82d5dcaf275f2e2, type: 2}
+  gemSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4a2f20c9bfd57a542b1e5ecafb071f46, type: 2}
+  winSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0a7ac31a2becded498ae2e415a2d7dc9, type: 2}
+  clickSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6e6936e339d63bc448c346a692ba43e7, type: 2}
   score: 0
 --- !u!1001 &1379453834
 PrefabInstance:

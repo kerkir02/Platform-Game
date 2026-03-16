@@ -18,7 +18,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] List<GameObject> heartsList;
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text finalScoreText;
+    [SerializeField] private TMP_Text gameOverScoreText;
     [SerializeField] private GameObject nextLevelText;
+    [SerializeField] private GameObject gameOverText;
 
     private float verticalInput;
     private float horizontalInput;
@@ -46,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         lives = heartsList.Count;
         gameManager = GameManager.Instance;
         nextLevelText.SetActive(false);
+        gameOverText.SetActive(false);
         canMove = true;
         scoreText.text = gameManager.ScoreUpdate(0);
     }
@@ -86,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
         spaceDown = false;
         isOnGround = false;
         jumpNumber++;
+        gameManager.PlayJumpSound();
     }
 
     // Applies horizontal movement based on input
@@ -138,6 +142,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     scoreText.text = gameManager.ScoreUpdate(enemy.killPoints);
                     enemy.DestroyEnemy();
+                    gameManager.PlayHitSound();
                     return;
                 }
             }
@@ -174,19 +179,22 @@ public class PlayerMovement : MonoBehaviour
 
             if (collectible.type == Collectibles.CollectType.Score)
             {
-
                 scoreText.text = gameManager.ScoreUpdate(collectible.value);
+                if (collectible.value == 5) gameManager.PlayCoinSound();
+                else gameManager.PlayGemSound();
                 Destroy(other.gameObject);
             }
             else if (collectible.type == Collectibles.CollectType.Heart && lives < heartsList.Count)
             {
                 heartsList[lives].SetActive(true);
                 lives++;
+                gameManager.PlayHeartSound();
                 Destroy(other.gameObject);
             }
         }
         if (other.CompareTag("Door"))
         {
+            gameManager.PlayWinSound();
             nextLevelText.SetActive(true);
             scoreText.gameObject.SetActive(false);
             canMove = false;
@@ -211,6 +219,7 @@ public class PlayerMovement : MonoBehaviour
         heartsList[lives].SetActive(false);
         isHit = true;
         isOnGround = false;
+        gameManager.PlayHurtSound();
         Invoke(nameof(GetUnHit), 2f);
         UnFlashing();
     }
@@ -252,6 +261,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (lives <= 0)
         {
+            scoreText.gameObject.SetActive(false);
+            gameOverText.SetActive(true);
+            gameOverScoreText.text = gameManager.ScoreUpdate(0);
+            gameManager.PlayGameOverSound();
             Instantiate(GameOverEffect, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
         }

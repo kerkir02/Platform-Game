@@ -12,6 +12,15 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] private List<AK.Wwise.Event> musicLibrary;
+    [SerializeField] private AK.Wwise.Event jumpSound;
+    [SerializeField] private AK.Wwise.Event hitSound;
+    [SerializeField] private AK.Wwise.Event gameOverSound;
+    [SerializeField] private AK.Wwise.Event hurtSound;
+    [SerializeField] private AK.Wwise.Event coinSound;
+    [SerializeField] private AK.Wwise.Event heartSound;
+    [SerializeField] private AK.Wwise.Event gemSound;
+    [SerializeField] private AK.Wwise.Event winSound;
+    [SerializeField] private AK.Wwise.Event clickSound;
 
     public int score = 0;
     private int saveScore;
@@ -99,5 +108,41 @@ public class GameManager : MonoBehaviour
     public bool IsMusicOn()
     {
         return isMusicOn;
+    }
+    public void PlayJumpSound()
+    {
+        if (isSoundOn) jumpSound.Post(gameObject);
+    }
+    public void PlayHitSound()
+    {
+        if (isSoundOn) hitSound.Post(gameObject);
+    }
+    public void PlayGameOverSound()
+    {
+        if (isSoundOn) gameOverSound.Post(gameObject);
+    }
+    public void PlayHurtSound()
+    {
+        if (isSoundOn) hurtSound.Post(gameObject);
+    }
+    public void PlayCoinSound()
+    {
+        if (isSoundOn) coinSound.Post(gameObject);
+    }
+    public void PlayHeartSound()
+    {
+        if (isSoundOn) heartSound.Post(gameObject);
+    }
+    public void PlayGemSound()
+    {
+        if (isSoundOn) gemSound.Post(gameObject);
+    }
+    public void PlayWinSound()
+    {
+        if (isSoundOn) winSound.Post(gameObject);
+    }
+    public void PlayClickSound()
+    {
+        if (isSoundOn) clickSound.Post(gameObject);
     }
 }
