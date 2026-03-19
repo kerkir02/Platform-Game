@@ -73,4 +73,8 @@ public class BottonsScript : MonoBehaviour
         // Odłączamy przy wyłączeniu obiektu
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }
